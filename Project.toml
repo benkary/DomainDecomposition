@@ -1,0 +1,6 @@
+authors = ["ben-cgi <ben@compgeoinc.com>"]
+name = "DomainDecomposition"
+uuid = "aabdb850-e4f6-11e8-0a7d-7fb1be061a1f"
+version = "0.1.0"
+
+[deps]

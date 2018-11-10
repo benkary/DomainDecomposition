@@ -1,5 +1,7 @@
 module DomainDecomposition
 
-greet() = print("Hello World!")
+include("core.jl")
+
+export IndexSet
 
 end # module

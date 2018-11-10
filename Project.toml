@@ -1,6 +1,7 @@
-authors = ["ben-cgi <ben@compgeoinc.com>"]
 name = "DomainDecomposition"
 uuid = "aabdb850-e4f6-11e8-0a7d-7fb1be061a1f"
+authors = ["ben-cgi <ben@compgeoinc.com>"]
 version = "0.1.0"
 
 [deps]
+IJulia = "7073ff75-c697-5162-941a-fcdaad2a7d2a"

@@ -2,6 +2,6 @@ module DomainDecomposition
 
 include("core.jl")
 
-export IndexSet
+export IndexMap
 
 end # module

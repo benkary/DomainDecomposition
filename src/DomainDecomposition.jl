@@ -3,6 +3,6 @@ module DomainDecomposition
 include("core.jl")
 include("mesh.jl")
 
-export IndexMap
+export IndexMap, getGmshStat
 
 end # module

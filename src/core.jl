@@ -1,6 +1,6 @@
 ## IndexSet
 """
-im = IndexMap(map, n)
+    IndexMap(map, n)
 
 Stores an index map as a dictionary of size n for geometrical entities of dimension D.
 Key value pairs store a permutation such that source indices (keys) may be mapped to 
@@ -20,7 +20,6 @@ im = IndexMap(Dict(1=>1, 2=>2), 2) : IndexMap{Int64, 1}
 im = IndexMap{Int32, 2}(Dict(1=>1, 2=>2), 2) : IndexMap{Int32, 1}
 im = IndexMap(Dict(1=>1, 2=>2), 2, 2) : IndexMap{Int64, 2}
 """
-
 struct IndexMap{T<:Integer, D}
     map::Dict{T, T}
     n::T
@@ -41,9 +40,15 @@ end
 
 function IndexMap{Tn, D}(map::Dict{T, T}, n::T) where {Tn<:Integer, T<:Integer, D}
     if Tn != T
-        map = Dict([Tn(k)=>Tn(v) for (k, v) in map])
+        map = Dict(Tn(k)=>Tn(v) for (k, v) in map)
         n = Tn(n)
     end
     return IndexMap(map, n, D)
 end
+
+function reverse(im::IndexMap{T, D}) where {T<:Integer, D}
+    return IndexMap{T, D}(Dict(v=>k for (k,v) in im.map), im.n)
+end
+
+dim(im::IndexMap{T, D}) where {T<:Integer, D} = D
 
